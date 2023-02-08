@@ -9,15 +9,15 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class MainPageComponent implements OnInit {
 
-  username: string = ""
-
+  
   usernameControl = new FormControl("", Validators.required)
+  emailControl = new FormControl("", [Validators.required, Validators.email])
 
   ngOnInit(): void {
   }
 
   printValue(){
-    console.info("data: ", this.username)
+    console.info("data: ", this.usernameControl.value)
   }
 
 }

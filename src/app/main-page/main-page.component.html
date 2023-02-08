@@ -1,6 +1,7 @@
 <div class="d-flex flex-column p-4 justify-content-center">
-    <input type="text" [formControl]="usernameControl">
-    <button [disabled]="!usernameControl.valid" type="button" class="btn btn-primary" (click)="printValue()">
+    <input matInput type="text" placeholder="username" [formControl]="usernameControl">
+    <input type="text" placeholder="email" [formControl]="emailControl">
+    <button [disabled]="!usernameControl.valid || !emailControl.valid" type="button" class="btn btn-primary" (click)="printValue()">
         print
     </button>
 </div>
