@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -10,14 +10,16 @@ import { FormControl, Validators } from '@angular/forms';
 export class MainPageComponent implements OnInit {
 
   
-  usernameControl = new FormControl("", Validators.required)
-  emailControl = new FormControl("", [Validators.required, Validators.email])
+  userFormGroup = new FormGroup({
+    usernameControl : new FormControl("", Validators.required),
+    emailControl : new FormControl("", [Validators.required, Validators.email])
+  })
 
   ngOnInit(): void {
   }
 
   printValue(){
-    console.info("data: ", this.usernameControl.value)
+    console.info("data: ", this.userFormGroup.value)
   }
 
 }
