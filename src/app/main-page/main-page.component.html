@@ -1,0 +1,6 @@
+<div class="d-flex flex-column p-4 justify-content-center">
+    <input type="text" [formControl]="usernameControl">
+    <button [disabled]="!usernameControl.valid" type="button" class="btn btn-primary" (click)="printValue()">
+        print
+    </button>
+</div>
