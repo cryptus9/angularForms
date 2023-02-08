@@ -1,8 +1,7 @@
 <form [formGroup]="userFormGroup" (ngSubmit)="printValue()">
         <div class="d-flex flex-column p-4 justify-content-center">
-        <input matInput type="text" placeholder="username" formControlName="usernameControl">
-        <input type="text" placeholder="email" formControlName="emailControl">
-        <button [disabled]="!userFormGroup.valid" type="button" class="btn btn-primary" (click)="printValue()">
+        <app-user-detail [parentForm]="userFormGroup"></app-user-detail>
+        <button [disabled]="!userFormGroup.valid" type="submit" class="btn btn-primary">
             print
         </button>
     </div>
